@@ -3,11 +3,11 @@ BIN_DIR=/usr/local/bin/mopidy-switcher
 SYSV_DIR=/etc/init.d
 SYSD_DIR=/etc/systemd/system
 
-install-sysv: mopidy-switcher
-	install mopidy-switcher $(SYSV_DIR)
+install-sysv: service/mopidy-switcher
+	install service/mopidy-switcher $(SYSV_DIR)
 
-install-sysd: mopidy-switcher.service
-	install mopidy-switcher.service $(SYSD_DIR)
+install-sysd: service/mopidy-switcher.service
+	install service/mopidy-switcher.service $(SYSD_DIR)
 
 install-switcher: mopidy-switcher.py
 	install -D mopidy-switcher.py $(BIN_DIR)
