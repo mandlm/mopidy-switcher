@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import glob
 import os
@@ -96,7 +96,10 @@ if __name__ == '__main__':
         setConfiguredLedColor()
 
 	try:
-		while True:
-			GPIO.wait_for_edge(dummyPin, GPIO.RISING)
+            while True:
+                GPIO.wait_for_edge(dummyPin, GPIO.RISING)
+        except KeyboardInterrupt:
+            print 'exiting'
 	finally:
-		GPIO.cleanup()
+            setLeds(0, 0, 0)
+            GPIO.cleanup()
