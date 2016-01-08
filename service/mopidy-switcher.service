@@ -1,0 +1,10 @@
+[Unit]
+Description=Mopidy Switcher
+After=mopidy.service
+
+[Service]
+User=root
+ExecStart=/usr/local/bin/mopidy-switcher/mopidy-switcher.py
+
+[Install]
+WantedBy=multi-user.target
